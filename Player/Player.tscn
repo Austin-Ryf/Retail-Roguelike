@@ -513,11 +513,10 @@ radius = 12.0
 radius = 4.0
 height = 4.0
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=["player"]]
 z_index = 2
 collision_layer = 2
 script = ExtResource( 1 )
-MAX_SPEED = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )

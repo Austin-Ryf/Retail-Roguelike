@@ -91,7 +91,7 @@ func load_map():
 	CURR_ENEMIES = 0
 	CURR_EVENTS = 0
 	fill_tile_chance_array()
-	event_room_aray.empty()
+	event_room_aray.clear()
 	max_vector_x = 0; min_vector_x = 0; max_vector_y = 0; min_vector_y = 0
 	for node in map_node.get_children():
 		map_node.remove_child(node)

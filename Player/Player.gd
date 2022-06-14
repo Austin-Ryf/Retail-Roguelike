@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-export(int) var MAX_SPEED = 500
+export(int) var MAX_SPEED = 100
 export(int) var ACCELERATION = 500
 export(int) var FRICTION = 500
+export(int) var PUSH = 10
 
 enum {
 	MOVE,
@@ -51,10 +52,17 @@ func move_state(delta):
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
-	velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity, Vector2(0,0), false, 4, 0.785398, false)
+
+#	Code for pushing rigidbodies through physics
+#	for index in get_slide_count():
+#		var collision = get_slide_collision(index)
+#		if collision.collider.is_in_group("bodies"):
+#			collision.collider.apply_central_impulse(-collision.normal * PUSH)
 	
 	if Input.is_action_just_pressed("attack"):
 		state = ATTACK
+
 
 func attack_state(delta):
 	velocity = Vector2.ZERO

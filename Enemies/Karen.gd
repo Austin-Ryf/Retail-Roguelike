@@ -101,7 +101,7 @@ func _physics_process(delta):
 				var direction = (player.global_position - global_position).normalized()
 				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
 				sprite.flip_h = velocity.x < 0
-				detection.shape.radius = 90
+				self.detection.shape.radius = 90
 				MAX_SPEED = 75
 			else:
 				state = IDLE

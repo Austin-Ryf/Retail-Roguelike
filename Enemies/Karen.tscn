@@ -70,6 +70,22 @@ region = Rect2( 896, 0, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 960, 0, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 1792, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 1856, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 1920, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 1 )
+region = Rect2( 1984, 0, 64, 64 )
+
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 1 )
 region = Rect2( 1408, 0, 64, 64 )
@@ -118,28 +134,17 @@ region = Rect2( 1280, 0, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 1344, 0, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 1 )
-region = Rect2( 1792, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 1 )
-region = Rect2( 1856, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 1 )
-region = Rect2( 1920, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 1 )
-region = Rect2( 1984, 0, 64, 64 )
-
 [sub_resource type="SpriteFrames" id=51]
 animations = [ {
 "frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "Aggro",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
@@ -150,11 +155,6 @@ animations = [ {
 "loop": true,
 "name": "Walk",
 "speed": 6.0
-}, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "Aggro",
-"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=19]
@@ -186,7 +186,7 @@ KNOCKBACK = 4
 position = Vector2( 0, -8 )
 frames = SubResource( 51 )
 animation = "Idle"
-frame = 8
+frame = 7
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]
